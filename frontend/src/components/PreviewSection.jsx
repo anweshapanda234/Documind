@@ -1,14 +1,15 @@
-function PreviewSection({ file }) {
+function PreviewSection({ file, processedImage }) {
   return (
     <div className="card">
       <h2>Document Preview</h2>
 
+      {/* Original Document */}
       <div className="preview-box">
         {file ? (
           file.type.startsWith("image/") ? (
             <img
               src={URL.createObjectURL(file)}
-              alt="Preview"
+              alt="Original"
               className="preview-image"
             />
           ) : (
@@ -23,8 +24,17 @@ function PreviewSection({ file }) {
         )}
       </div>
 
+      {/* Processed Document */}
       <div className="preview-box">
-        <p>Processed Document Preview</p>
+        {processedImage ? (
+          <img
+            src={processedImage}
+            alt="Processed"
+            className="preview-image"
+          />
+        ) : (
+          <p>Processed Document Preview</p>
+        )}
       </div>
     </div>
   );

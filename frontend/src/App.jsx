@@ -12,6 +12,7 @@ function App() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [uploadStatus, setUploadStatus] = useState("");
+  const [processedImage, setProcessedImage] = useState("");
   const handleUpload = async () => {
   if (!file) {
     alert("Please select a file first");
@@ -25,7 +26,15 @@ function App() {
 
     setUploadStatus(result.message);
 
+    setProcessedImage(
+      `http://127.0.0.1:8000/${result.processed_file}`
+    );
+
     console.log(result);
+
+   
+
+   
   } catch (error) {
     console.error(error);
 
@@ -55,7 +64,10 @@ function App() {
           loading={loading}
        />
 
-        <PreviewSection file={file} />
+        <PreviewSection
+          file={file}
+          processedImage={processedImage}
+        />
 
       </div>
 
