@@ -93,6 +93,9 @@ DocuMind is an AI-powered document intelligence platform that automates document
 
 <img width="2418" height="1132" alt="image" src="https://github.com/user-attachments/assets/14a60501-b0a5-4fe3-af21-4459f4a78e03" />
 
+<img width="2410" height="1252" alt="image" src="https://github.com/user-attachments/assets/57143f79-dfe4-4f44-904a-d54b2bcdefc6" />
+
+<img width="2420" height="1240" alt="image" src="https://github.com/user-attachments/assets/547bf48d-a010-4d79-82ef-4dae97cb7ede" />
 
 ## 📂 Project Structure
 
