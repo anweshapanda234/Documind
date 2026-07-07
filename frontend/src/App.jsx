@@ -13,6 +13,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [uploadStatus, setUploadStatus] = useState("");
   const [processedImage, setProcessedImage] = useState("");
+  const [documentData, setDocumentData] = useState(null);
   const handleUpload = async () => {
   if (!file) {
     alert("Please select a file first");
@@ -29,6 +30,8 @@ function App() {
     setProcessedImage(
       `http://127.0.0.1:8000/${result.processed_file}`
     );
+    setDocumentData(result.document);
+  
 
     console.log(result);
 
@@ -71,14 +74,17 @@ function App() {
 
       </div>
 
-      <DocumentType />
+      <DocumentType documentData={documentData} />
+
       {uploadStatus && (
         <div className="upload-status">
           {uploadStatus}
-       </div>
+        </div>
       )}
 
-      <DynamicForm />
+    
+
+<DynamicForm documentData={documentData} />
 
     </div>
   );

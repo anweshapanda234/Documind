@@ -1,6 +1,9 @@
 import os
 import cv2
 from fastapi import UploadFile
+from services.ocr_service import extract_text
+from services.gemini_services import extract_document_information
+from services.metadata_service import save_metadata
 
 UPLOAD_FOLDER = "uploads"
 PROCESSED_FOLDER = "processed"
@@ -26,6 +29,7 @@ async def process_uploaded_image(file: UploadFile):
 
     image = cv2.imread(file_path)
 
+# Convert to Grayscale
     gray = cv2.cvtColor(
         image,
         cv2.COLOR_BGR2GRAY
@@ -34,10 +38,17 @@ async def process_uploaded_image(file: UploadFile):
     cv2.imwrite(
         processed_path,
         gray
+   )
+    ocr_text = extract_text(processed_path)
+    document_data = extract_document_information(ocr_text)
+    save_metadata(
+    file.filename,
+    document_data["document_type"]
     )
 
     return {
-        "message": "File uploaded and processed successfully",
-        "filename": file.filename,
-        "processed_file": processed_path
+    "message": "File uploaded and processed successfully",
+    "filename": file.filename,
+    "processed_file": processed_path,
+    "document": document_data
     }

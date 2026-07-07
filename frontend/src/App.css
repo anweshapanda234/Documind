@@ -288,3 +288,70 @@ button:active {
   font-size: 60px;
   margin-bottom: 10px;
 }
+
+.form-section {
+  margin-top: 30px;
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    resize:vertical;
+    background:#f9fafb;
+    font-family:monospace;
+}
+
+.nested-section{
+    margin-left:20px;
+    border-left:3px solid #2563eb;
+    padding-left:15px;
+    margin-top:10px;
+}
+
+.nested-card{
+    margin-bottom:15px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    font-weight:600;
+    margin-bottom:6px;
+    color:#1f2937;
+}
+
+.form-group input{
+    width:100%;
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    background:#f9fafb;
+}
